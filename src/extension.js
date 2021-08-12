@@ -1338,7 +1338,7 @@ class DataClassGenerator {
         const short = props.length <= 4;
         const split = short ? ', ' : ',\n';
         let method = '@override\n';
-        method += `List<Object> get props ${!short ? '{\n' : '=>'}`;
+        method += `List<Object?> get props ${!short ? '{\n' : '=>'}`;
         method += `${!short ? '  return' : ''} ` + '[' + (!short ? '\n' : '');
         for (let prop of props) {
             const isLast = prop.name == props[props.length - 1].name;
